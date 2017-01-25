@@ -136,7 +136,7 @@ $ npm run test                  # Run unit tests. Or, `npm run test:watch`
 
 Update `publish` script in the [`run.js`](run.js) file with your full Firebase project name as found
 in your [Firebase console](https://console.firebase.google.com/). Note that this may have an
-additional identifier suffix than the shorter name you've provided. Then run: 
+additional identifier suffix than the shorter name you've provided. Then run:
 
 ```shell
 $ node run publish              # Build and publish the website to Firebase, same as `npm run publish`

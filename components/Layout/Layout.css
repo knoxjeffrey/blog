@@ -1,0 +1,78 @@
+/**
+ * React Static Boilerplate
+ * https://github.com/kriasoft/react-static-boilerplate
+ *
+ * Copyright © 2015-present Kriasoft, LLC. All rights reserved.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE.txt file in the root directory of this source tree.
+ */
+
+.font {
+  font-family: 'Muli', sans-serif; font-size: 1.5em;
+  transition: opacity 2s ease-in;
+}
+
+html {
+  height:100vh;
+  /*overflow: hidden;*/
+}
+
+body {
+  height:100vh; margin: 0;
+  /*overflow-y:scroll;*/
+  -webkit-font-smoothing: antialiased;
+  -webkit-overflow-scrolling: touch; /* iOS velocity scrolling */
+}
+
+.content {
+  margin: 0 auto; max-width: 1000px; width: 100%;
+}
+
+.flexbox_container {
+  width: 100%; padding-left: 0 !important; padding-right: 0 !important;
+}
+
+
+.container {
+  
+}
+
+.main {
+  margin-top: 100vh; background: white;
+}
+
+h1 {
+  font-weight: 600;
+  line-height: 2em;
+}
+
+h2 {
+  font-weight: 600;
+  line-height: 1.5em;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.5em;
+}
+
+@media only screen and (max-width: 768px) {
+  .font {
+    font-size: 1.3em;
+  }
+
+  .container {
+    padding-left: 0; padding-right: 0;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .font {
+    font-size: 1.2em;
+  }
+
+  .flexbox_container {
+    padding-left: 16px; padding-left: 1rem; padding-right: 16px; padding-right: 1rem;
+  }
+}

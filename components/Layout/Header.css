@@ -1,0 +1,125 @@
+/**
+* React Static Boilerplate
+* https://github.com/kriasoft/react-static-boilerplate
+*
+* Copyright © 2015-present Kriasoft, LLC. All rights reserved.
+*
+* This source code is licensed under the MIT license found in the
+* LICENSE.txt file in the root directory of this source tree.
+*/
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  position: absolute; height: 6em; top: 0; right: 0;
+  overflow: hidden; z-index: 12; background-color: rgba(255,255,255,0);
+  transition: height 0.3s;
+  transform: translate3d(0,0);
+  transition: transform .5s, height .3s, background .4s;
+
+}
+
+.header_detatched {
+  position: fixed;
+  z-index: 12;
+  transition: transform .4s,opacity .3s !important;
+}
+
+.header_invisible {
+  z-index: 12; opacity: 0; overflow: hidden;
+  transform: translate3d(0,-6em,0);
+  transition: transform .5s,opacity 2s;
+}
+
+
+.logo {
+  position: relative; height: 9em; padding: 0.8em 4em;
+  display: inline-block; line-height: 9em; z-index: 12;
+}
+
+.hamburger {
+  position: relative; float: right; right:0; top:0; padding:1.5em 2em;
+  z-index: 12; cursor:pointer; user-select:none;
+  transform:translate3d(0, 0, 0);
+  transition:transform 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger_layer {
+  margin-bottom: 8px; width: 1.5em; height: 5px;
+  background:#212121; opacity:1;
+  transform:translate3d(0, 0, 0);
+  transition:all 0.25s cubic-bezier(0.05, 1.04, 0.72, 0.98);
+}
+
+.hamburger_top_hover {
+  background:#FF4081;
+  transform:translateY(-40%)
+}
+
+.hamburger_middle_hover {
+  background:#FF4081;
+}
+
+.hamburger_bottom_hover {
+  background:#FF4081;
+  transform:translateY(40%)
+}
+
+.hamburger_top_active{
+  background:#FF4081;
+  transform:translateY(300%) rotate(45deg) !important
+}
+
+.hamburger_middle_active {
+  opacity:0
+}
+
+.hamburger_bottom_active {
+  background:#FF4081;
+  transform:translateY(-220%) rotate(135deg) !important
+}
+
+@media only screen and (max-width: 768px) {
+  .header {
+  }
+
+  .logo {
+    padding-left: 0;
+  }
+
+  .hamburger {
+    padding: 1em 2em;
+  }
+
+  .hamburger_layer {
+    width: 1.4em; margin-bottom: 6px;
+  }
+
+  .hamburger_top_active{
+    transform:translateY(200%) rotate(45deg) !important
+  }
+
+  .hamburger_bottom_active {
+    transform:translateY(-240%) rotate(135deg) !important
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .hamburger {
+    padding-right: 0.5em; padding-top: 1em;
+  }
+
+  .hamburger_layer {
+    width: 1.3em; margin-bottom: 5px;
+  }
+
+  .hamburger_top_active{
+    transform:translateY(200%) rotate(45deg) !important
+  }
+
+  .hamburger_bottom_active {
+    transform:translateY(-200%) rotate(135deg) !important
+  }
+}

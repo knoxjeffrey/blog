@@ -84,11 +84,6 @@ class Header extends React.Component {
   }
 
   handleScroll(event) {
-    // var scrollTop =(window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
-    // var scrollPosition = window.pageYOffset;
-    // var windowSize = window.innerHeight;
-    // var bodyHeight = document.body.offsetHeight;
-    // var scrollBottom = Math.max(bodyHeight - (scrollPosition + windowSize), 0)
     this.setScrollDirectionAndPosition()
     this.handleNavStatus()
     this.closeNavOnScroll()

@@ -140,8 +140,7 @@ class HomePage extends React.Component {
   splashHTML() {
     if (this.props.mainPageActive) {
       return (
-        `<h4 class=${s.name}>Jeff Knox</h4>
-      <svg class=${s.svg_rails} viewBox="0 0 128 128">
+      `<svg class=${s.svg_rails} viewBox="0 0 128 128">
           <path fill="#FFF" d="M18.922 104.532v21.468h5.476v-5.591l4.983 4.983h8.402l-6.664-6.664s4.795-.078 5.157-7.01c0-6.361-4.8-7.186-10.343-7.186h-7.011zm5.737 5.824h4.722v3.824h-4.722v-3.824z"></path>
           <path fill="#FFF" d="M48.358 104.619c-2.997-.017-7.155.261-7.155 5.911v14.92h5.62v-3.65h5.447v3.563h5.649v-15.644c0-4.907-5.452-5.1-8.373-5.1h-1.188zm-1.449 5.388h5.273v5.882h-5.273v-5.882z"></path>
           <path fill="#FFF" d="M63.55 104.632h5.815v20.537h-5.815z"></path>

@@ -19,7 +19,6 @@ class Link extends React.Component {
   };
 
   handleClick = (event) => {
-    
     if (this.props.onClick) {
       this.props.onClick(event);
     }

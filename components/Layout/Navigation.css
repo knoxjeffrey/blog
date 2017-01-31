@@ -47,10 +47,6 @@ li {
   list-style:none; text-align:center; opacity:1
 }
 
-a {
-  transition: all 0.2s ease-in-out;
-}
-
 a::before {
   position: absolute; width: 100%; height: 0.08em; margin-top: 1.1em; left: 0;
   background-color: #FFF; visibility: hidden;
@@ -80,10 +76,6 @@ a:hover::before {
   .primary_nav_item_active {
     font-size:2.5em;
   }
-
-  .primary_nav_item_active:hover {
-    font-size:3em;
-  }
 }
 
 @media only screen and (max-width: 480px) {
@@ -93,9 +85,5 @@ a:hover::before {
 
   .primary_nav_item_active {
     font-size:2em;
-  }
-
-  .primary_nav_item_active:hover {
-    font-size:2.5em;
   }
 }

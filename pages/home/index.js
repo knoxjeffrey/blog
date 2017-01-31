@@ -18,6 +18,7 @@ import {Table, TableBody, TableHeader, TableHeaderColumn, TableRow, TableRowColu
 import { connect } from 'react-redux'
 import * as navigationActions from '../../actions/navigation_actions/index';
 import * as splashActions from '../../actions/splash_actions/index';
+import * as mainActions from '../../actions/main_actions/index';
 import { bindActionCreators } from 'redux'
 
 class HomePage extends React.Component {
@@ -40,7 +41,6 @@ class HomePage extends React.Component {
   }
 
   handleMainPageAppearance() {
-    console.log('hi')
     this.props.splashActions.showMainPage();
   }
 
@@ -164,7 +164,7 @@ class HomePage extends React.Component {
         <div className={`${s.server_simulation} ${this.props.mainPageActive ? s.hide_command : s.show_command}`}>
           <div>{this.serverRender()}</div>
         </div>
-        <Splash color='#2196F3' text={this.splashHTML()} className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden} />
+        <Splash {...this.props} color='#2196F3' text={this.splashHTML()} className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden} />
         <div className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden}>
           <Layout className={s.content}>
             <div dangerouslySetInnerHTML={{ __html: html }} />
@@ -188,14 +188,16 @@ class HomePage extends React.Component {
 function mapDispatchToProps(dispatch) {
   return {
     navigationActions: bindActionCreators(navigationActions, dispatch),
-    splashActions: bindActionCreators(splashActions, dispatch)
+    splashActions: bindActionCreators(splashActions, dispatch),
+    mainActions: bindActionCreators(mainActions, dispatch)
   };
 }
 
 function mapStateToProps(state) {
   return {
     navActive: state.navActive,
-    mainPageActive: state.mainPageActive
+    mainPageActive: state.mainPageActive,
+    scrollPosition: state.scrollPosition
   };
 }
 

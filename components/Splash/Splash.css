@@ -9,4 +9,5 @@
   position: relative; display: inline-block; margin: 0 auto; width: 100%; max-width: 1400px;
   text-align: center; color: white;
   font-family: 'Muli', sans-serif; font-size: 1.2em; font-weight: 300;
+  transition: transform 8ms, linear;
 }

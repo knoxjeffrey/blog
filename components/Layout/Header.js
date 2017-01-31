@@ -59,7 +59,7 @@ class Header extends React.Component {
     var updateNavVisible = false
     var updateIsDetatched = true
 
-    if(scrollTop <= 110) { updateNavVisible = true }
+    if(scrollTop <= 350) { updateNavVisible = true }
     if(scrollTop < 550) { updateIsDetatched = false }
 
     if(this.state.scrollDirection === 'up') {
@@ -89,16 +89,15 @@ class Header extends React.Component {
     this.closeNavOnScroll()
   }
 
-  componentDidMount() {
-      window.addEventListener('scroll', _.throttle(this.handleScroll,75));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
+  componentWillReceiveProps(nextProps) {
+    if(this.props.scrollPosition !== nextProps.scrollPosition) {
+      this.setScrollDirectionAndPosition()
+      this.handleNavStatus()
+      this.closeNavOnScroll()
+    }
   }
 
   render() {
-    console.log(this.state)
     return (
       <header>
         <Row>

@@ -6,10 +6,11 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
 
-    this.opacityCalculator = this.opacityCalculator.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
 
     this.state = {
-      splashOpacity: 1
+      opacity: 1,
+      margin: 0
     };
   }
 
@@ -17,26 +18,34 @@ class Splash extends React.Component {
     color: PropTypes.oneOfType([PropTypes.string, PropTypes.object]).isRequired,
   };
 
-  opacityCalculator(event) {
-    var scrollPosition = window.pageYOffset;
-    var opacity = 1 - (scrollPosition / 745);
-    this.setState({ splashOpacity: opacity });
+  componentWillReceiveProps(nextProps) {
+    if(this.props.scrollPosition !== nextProps.scrollPosition) {
+      this.handleScroll()
+    }
   }
 
-  componentDidMount() {
-      window.addEventListener('scroll', _.throttle(this.opacityCalculator,75));
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.opacityCalculator);
+  handleScroll() {
+    this.setState({
+      opacity: 1 - (this.props.scrollPosition / 745),
+      margin:  1 - (this.props.scrollPosition / 4)
+    });
   }
 
   render() {
     const { color, text, ...props } = this.props;
     return (
-      <div className={s.full_page_splash} style={{ backgroundColor : color, opacity : this.state.splashOpacity }}>
+      <div className={s.full_page_splash}
+           style={{
+             backgroundColor: color,
+             opacity: this.state.opacity,
+           }}
+      >
         <Row className={s.splash_text}>
-          <div dangerouslySetInnerHTML={{ __html: text }} />
+          <div dangerouslySetInnerHTML={{ __html: text }}
+               style={{
+                 transform: `translate(0, ${this.state.margin}px)`
+               }}
+          />
         </Row>
       </div>
     );

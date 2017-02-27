@@ -13,7 +13,7 @@
 }
 
 svg {
-  position: relative; height: 7em; padding-right: 0.5em; display: inline-block; bottom: -1.5em;
+  position: relative; height: 7em; padding-right: 0.5em; display: inline-block; bottom: 0;
   font-size: 0.15em; opacity: 0;
   animation: standard_frameworks 0.5s forwards 0.5s;
 }

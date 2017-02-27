@@ -10,6 +10,9 @@
 
 import React, { PropTypes } from 'react';
 import history from '../../core/history';
+import { connect } from 'react-redux'
+import * as mainActions from '../../actions/main_actions/index';
+import { bindActionCreators } from 'redux'
 
 class Link extends React.Component {
 
@@ -45,6 +48,8 @@ class Link extends React.Component {
         search: event.currentTarget.search,
       });
     }
+    window.scrollTo(0, 0);
+    this.props.mainActions.updateScrollPosition(0);
   };
 
   render() {
@@ -54,4 +59,15 @@ class Link extends React.Component {
 
 }
 
-export default Link;
+function mapDispatchToProps(dispatch) {
+  return {
+    mainActions: bindActionCreators(mainActions, dispatch)
+  };
+}
+
+function mapStateToProps(state) {
+  return {
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Link);

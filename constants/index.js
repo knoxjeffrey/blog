@@ -5,3 +5,4 @@ export const UPDATE_SCROLL_POSITION = 'UPDATE_SCROLL_POSITION'
 
 export const COLOR_1 = '#2196F3'
 export const COLOR_2 = '#3F51B5'
+export const COLOR_3 = '#009688'

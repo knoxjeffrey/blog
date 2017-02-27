@@ -2,6 +2,9 @@ import React, { PropTypes } from 'react';
 import s from './Splash.css';
 import {Row} from 'react-flexbox-grid/lib';
 
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+
 class Splash extends React.Component {
   constructor(props) {
     super(props);
@@ -53,4 +56,15 @@ class Splash extends React.Component {
 
 }
 
-export default Splash;
+function mapDispatchToProps(dispatch) {
+  return {
+  };
+}
+
+function mapStateToProps(state) {
+  return {
+    scrollPosition: state.scrollPosition
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Splash);

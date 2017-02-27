@@ -19,6 +19,7 @@ import { connect } from 'react-redux'
 import * as navigationActions from '../../actions/navigation_actions/index';
 import * as splashActions from '../../actions/splash_actions/index';
 import * as mainActions from '../../actions/main_actions/index';
+import * as constants from '../../constants';
 import { bindActionCreators } from 'redux'
 
 class HomePage extends React.Component {
@@ -33,6 +34,7 @@ class HomePage extends React.Component {
 
     this.state = {
       framework: items[Math.floor(Math.random()*items.length)],
+      backgroundColor: constants.COLOR_1
     };
   }
 
@@ -164,7 +166,7 @@ class HomePage extends React.Component {
         <div className={`${s.server_simulation} ${this.props.mainPageActive ? s.hide_command : s.show_command}`}>
           <div>{this.serverRender()}</div>
         </div>
-        <Splash {...this.props} color='#2196F3' text={this.splashHTML()} className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden} />
+        <Splash {...this.props} color={this.state.backgroundColor} text={this.splashHTML()} className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden} />
         <div className={this.props.mainPageActive ? s.layout_shown : s.layout_hidden}>
           <Layout className={s.content}>
             <div dangerouslySetInnerHTML={{ __html: html }} />

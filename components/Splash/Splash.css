@@ -11,3 +11,13 @@
   font-family: 'Muli', sans-serif; font-size: 1.2em; font-weight: 300;
   transition: transform 8ms, linear;
 }
+
+svg {
+  position: relative; height: 7em; padding-right: 0.5em; display: inline-block; bottom: -1.5em;
+  font-size: 0.15em; opacity: 0;
+  animation: standard_frameworks 0.5s forwards 0.5s;
+}
+
+@keyframes standard_frameworks {
+	100% { opacity: 1; }
+}

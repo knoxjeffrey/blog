@@ -40,6 +40,9 @@ class Link extends React.Component {
 
     event.preventDefault();
 
+    window.scrollTo(0, 0);
+    this.props.mainActions.updateScrollPosition(0);
+
     if (this.props.to) {
       history.push(this.props.to);
     } else {
@@ -48,8 +51,6 @@ class Link extends React.Component {
         search: event.currentTarget.search,
       });
     }
-    window.scrollTo(0, 0);
-    this.props.mainActions.updateScrollPosition(0);
   };
 
   render() {
